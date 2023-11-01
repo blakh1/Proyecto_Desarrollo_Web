@@ -79,6 +79,10 @@ fetch("https://ha-front-api-proyecto-final.vercel.app/cars")
                             </div>
                         </div>`
             );
+            
+
+            
+
             let nuevo = document.querySelectorAll(".spanNew");
             if (car.status === 1) {
                 nuevo[nuevo.length - 1].classList.remove("d-none");
