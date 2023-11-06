@@ -1,5 +1,54 @@
 let carsContainer = document.querySelector("#carsContainer");
 
+yearOptions();
+
+function yearOptions() {
+
+    const selectYear = document.querySelector(".year");
+    for (let i = 2023; i >= 1900; i--) {
+      const option = document.createElement("option");
+      option.value = i;
+      option.textContent = i;
+      selectYear.appendChild(option);
+    }
+  }
+  
+  fetch("https://ha-front-api-proyecto-final.vercel.app/brands")
+  .then(function (res) {
+    return res.json();
+  })
+  .then(function (brands) {
+    const marcas = document.querySelector(".marcas");
+
+    for (let i = 0; i < brands.length; i++) {
+      const marca = brands[i];
+      const opcionMarcas = document.createElement("option");
+      opcionMarcas.innerHTML = marca;
+      marcas.append(opcionMarcas);
+    }
+  });
+
+  const marcas = document.querySelector(".marcas");
+  marcas.addEventListener("change", () => {
+    fetch(
+      "https://ha-front-api-proyecto-final.vercel.app/models?brand=" +
+        marcas.value
+    )
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (model) {
+        const modelo = document.querySelector(".modelo");
+        modelo.innerHTML = "";
+        for (let i = 0; i < model.length; i++) {
+          const modelOption = document.createElement("option");
+          const actualModel = model[i];
+          modelOption.append(actualModel);
+          modelo.append(modelOption);
+        }
+      });
+  });
+
 fetch("https://ha-front-api-proyecto-final.vercel.app/cars")
     .then(function (res) {
         return res.json();
@@ -79,18 +128,7 @@ fetch("https://ha-front-api-proyecto-final.vercel.app/cars")
                             </div>
                         </div>`
             );
-            
 
-            
 
-            let nuevo = document.querySelectorAll(".spanNew");
-            if (car.status === 1) {
-                nuevo[nuevo.length - 1].classList.remove("d-none");
-            }
-
-            let stars = document.querySelectorAll(".stars");
-            for (let i = 0; i < car.rating; i++) {
-                const element = array[i];
-            }
-        }
+     }
     });
