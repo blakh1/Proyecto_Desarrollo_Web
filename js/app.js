@@ -13,9 +13,6 @@ function yearOptions() {
     }
   }
   
-
-
-  // Chequear que abra bien el dropdown
   fetch("https://ha-front-api-proyecto-final.vercel.app/brands")
   .then(function (res) {
     return res.json();
