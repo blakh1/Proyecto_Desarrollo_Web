@@ -12,7 +12,45 @@ function yearOptions() {
       selectYear.appendChild(option);
     }
   }
+  
 
+
+  // Chequear que abra bien el dropdown
+  fetch("https://ha-front-api-proyecto-final.vercel.app/brands")
+  .then(function (res) {
+    return res.json();
+  })
+  .then(function (brands) {
+    const marcas = document.querySelector(".marcas");
+
+    for (let i = 0; i < brands.length; i++) {
+      const marca = brands[i];
+      const opcionMarcas = document.createElement("option");
+      opcionMarcas.innerHTML = marca;
+      marcas.append(opcionMarcas);
+    }
+  });
+
+  const marcas = document.querySelector(".marcas");
+  marcas.addEventListener("change", () => {
+    fetch(
+      "https://ha-front-api-proyecto-final.vercel.app/models?brand=" +
+        marcas.value
+    )
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (model) {
+        const modelo = document.querySelector(".modelo");
+        modelo.innerHTML = "";
+        for (let i = 0; i < model.length; i++) {
+          const modelOption = document.createElement("option");
+          const actualModel = model[i];
+          modelOption.append(actualModel);
+          modelo.append(modelOption);
+        }
+      });
+  });
 
 fetch("https://ha-front-api-proyecto-final.vercel.app/cars")
     .then(function (res) {
