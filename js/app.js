@@ -109,7 +109,7 @@ fetch("https://ha-front-api-proyecto-final.vercel.app/cars")
                                         class="btn saleButton"
                                         type="submit"
                                     >
-                                        <i class="bi bi-cart3"></i> Comprar
+                                        <i class="bi bi-cart3 bg-success p-2 rounded-1 text-white">Comprar</i> 
                                     </button>
                                     <button
                                         type="button"
