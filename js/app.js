@@ -1,5 +1,19 @@
 let carsContainer = document.querySelector("#carsContainer");
 
+yearOptions();
+
+function yearOptions() {
+
+    const selectYear = document.querySelector(".year");
+    for (let i = 2023; i >= 1900; i--) {
+      const option = document.createElement("option");
+      option.value = i;
+      option.textContent = i;
+      selectYear.appendChild(option);
+    }
+  }
+
+
 fetch("https://ha-front-api-proyecto-final.vercel.app/cars")
     .then(function (res) {
         return res.json();
@@ -79,18 +93,7 @@ fetch("https://ha-front-api-proyecto-final.vercel.app/cars")
                             </div>
                         </div>`
             );
-            
 
-            
 
-            let nuevo = document.querySelectorAll(".spanNew");
-            if (car.status === 1) {
-                nuevo[nuevo.length - 1].classList.remove("d-none");
-            }
-
-            let stars = document.querySelectorAll(".stars");
-            for (let i = 0; i < car.rating; i++) {
-                const element = array[i];
-            }
-        }
+     }
     });
