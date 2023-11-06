@@ -110,8 +110,25 @@ h6 {
   text-decoration: none;
 }
 
-
-.brands{
-height: 600px;
+.brands {
+  height: 600px;
 }
-
+.card-img-top {
+  width: 100%;
+  height: 30rem;
+}
+h6 {
+  color: #eeeeee;
+}
+.page-header {
+  color: #eeeeee;
+}
+.copyright {
+  color: #eeeeee;
+}
+.col {
+  text-align: center;
+}
+.btn btn-light {
+  background-color: #eeeeee;
+}
