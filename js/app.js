@@ -128,7 +128,5 @@ fetch("https://ha-front-api-proyecto-final.vercel.app/cars")
                             </div>
                         </div>`
             );
-
-
      }
     });
