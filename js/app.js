@@ -84,7 +84,7 @@ fetch("https://ha-front-api-proyecto-final.vercel.app/cars")
                                     <div
                                         class="d-flex justify-content-between align-items-center"
                                     >
-                                        <h3 class="card-title carName">
+                                        <h3 class="card-title carName fs-6">
                                         ${car.brand + " " + car.model} 
                                         </h3>
                                         <div class="datosDelAuto d-flex">
